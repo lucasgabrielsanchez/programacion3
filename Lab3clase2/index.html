@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--shift+altf+f arregla el código-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <table width = "300px" border="Ipx">
+    <caption>Nuestros Cursos</caption>
+        <thead>
+            <!--Filas de la tabla, cada tr es una fila-->
+            <tr> 
+                <!--cada th es un campo de la fila de titulo-->
+                <th>tema</th> 
+                <th>precio</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr> 
+                <!--cada td es un campo de la fila-->
+                <!--rowspan agrupa filas-->
+                <td rowspan="3">html</td>
+                <td>$900</td>
+            </tr>
+            <tr> 
+                <!--<td>html</td>-->
+                <td>$900</td>
+            </tr>
+            <tr> 
+                <!--<td>html</td>-->
+                <td>$900</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <!--colspan agrupa columnas-->
+                <td colspan="2">Están buenísimos</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <h2>Archivo de video</h2>
+    <!--De esta forma adjunto un video a la página de forma normal y con un solo formato-->
+    <!--<video src="video/codigo.mp4" controls autoplay loop width="300px">-->
+
+    <!--de esta forma con la ayuda de la etiquita source, hago una lista con diferentes formatos del video
+    para que cada navegador abra el formato que pueda reproducir. Poster se usa para mostrar una imagen mientras el
+    video carga. Controls agrega controles para iniciar el video, etc. Loop hace que se repita la reproducción todo el tiempo-->
+    <video controls autoplay loop width="300px" poster="Penguins.jpg">
+        <source src="video/codigo.mp4" type="video/mp4">
+        <source src="video/codigo.ogv" type="video/ogv">
+        <source src="video/codigo.webm" type="video/webm">
+        Su navegador no admite video 
+    </video>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--con esta línea referencio en este body a estilos.css-->
+    <link rel="stylesheet" href="css/estilos.css">
+    <h2>Titulo con estilos.css</h2>
+
+    <!--creación de formulario-->
+    <form id="miForm" action="" method="">
+        <!--asi se hacían antes los estilos-->
+        <!--<h1 style="color:aqua">Titulo con estilo</h1>
+        <h1 style="color:#0000ff">Titulo con estilo</h1>-->
+
+        <!--ahorrar style para varias lineas, esto es mejor hacerlo en un archivo css-->
+        <!--<h2>Titulo nuevo</h2>
+        <h2>otro titulo</h2>
+        <style>
+        h2{
+            color:blueviolet;
+        }
+        </style>-->
+
+        <!--el fieldset agrupa visualmente elementos-->
+        <fieldset>
+            <legend>Formulario</legend>
+            <!--label muestra texto y se puede hacer foco a otro elemento con "for"-->
+                <label for="nombre1">Ingrese el nombre</label> 
+                <!--campo que permite ingresar texto-->
+                <input type="text" name="nombre" id="nombre1" placeholder="ingrese nombre"><br>
+            <label for="">Sexo:</label><br>
+            <label for="radio1">Masculino</label>
+                <input type="radio" name="genero" value="femenino" id="radio1">
+            <label for="radio2">Femenino</label>
+            <input type="radio" name="genero" value="masculino" id="radio2">
+            <br><br>
+
+            <!--select-->
+            Select<br>
+            <select name="select" id="select1">
+                <optgroup label="Materias">
+                    <option value="value1">Ingles</option>
+                    <option value="value2">Matematica</option>
+                </optgroup>
+                
+                <optgroup label="Horario">
+                <option value="value3">mañana</option>
+                <option value="value4">tarde</option>
+                <option value="value5">noche</option>
+                </optgroup>
+            </select>
+
+            <!--datalist-->
+            <br>Datalist<br>
+            <input list="miLista">
+
+            <datalist id="miLista">
+                <option value="hola"></option>
+                <option value="hola1"></option>
+                <option value="hola2"></option>
+            </datalist>
+
+            <br><br>
+            <label for="check1">Informatica</label> 
+            <input type="checkbox" name="check" value="informatica" checked id="check1"><br>
+            <label for="check2">Ciencia</label> 
+            <input type="checkbox" name="check" value="informatica"  id="check2"><br>
+            <label for="check3">Deportes</label> 
+            <input type="checkbox" name="check" value="informatica"  id="check3"><br>
+
+            <br><br>
+            
+
+            <br><br>
+            <!--otros types-->
+            color<input type="color"><br>
+            fecha<input type="date"><br>
+            email<input type="email"><br>
+            url<input type="url"><br>
+            number<input type="number" min="0" max="10" step="2"><br>
+            password<input type="password"><br>
+
+            <br><br>
+            <!--input validado, no se valida en el momento que se escribe sino cuando se toca el botón submit(el del tipo sunmit)-->
+            <input type="text" pattern="[A-Za-z]{3}">
+
+            <br><br>
+            <button type="button">Submitir</button><br>
+            <button type="submit">Submitir</button><br>
+            <button type="reset">Submitir</button><br>
+        </fieldset>
+
+    </form>
+    
+</body>
+</html>
