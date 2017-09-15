@@ -94,27 +94,38 @@ otro ejemplo:
 
 function mostrar(resultado)
 {
-    alert("la suma es "+resultado)
+    alert("la suma es "+resultado);
 }
 
-function Suma(a,b,callback){
+function Suma(a,b,callback)
+{
     var resultado = parseInt(a) + parseInt(b);
 
     //pregunto si callback es una función, el triple = compara tipo y valor.
-    if(typeof(callback) === "function"){
+    if(typeof(callback) === "function")
+    {
         callback(resultado);
     }
 }
 
 window.onload = function()
 {
-   var txtA = document.getElementById('number1').value;
-   var txtB = document.getElementById('number2').value;
+   var txtA = document.getElementById('number1');
+   var txtB = document.getElementById('number2');
 
    var btnSumar = document.getElementById('buton1');
 
-   var resultadito = "";
-   btnSumar.onclick = Suma(txtA,txtB,mostrar(resultadito));
+   /*nótese que cada vez que agrego un manejador a un evento, lo encierro en una función anónima
+   "function(){}" <-- función anónima, ya que es lo que se requiere como parámetro al agregarle
+   un manejador a un evento, debajo vemos la forma implícita y explícita de agregar un manejador
+   a un evento*/
+
+   /*nótese además que como parámetro, le hago el .value a las variables dentro de la función, ya que
+   si guardo en las variables inicialmente el .value de cada elemento, éstos guardarán vacío, ya que
+   al cargarse la página (evento window.onload, éstos elementos no tienen tipeados valores por 
+   el usuario*/
+   btnSumar.onclick = function(){Suma(txtA.value,txtB.value,mostrar);};
+   //btnSumar.addEventListener("click",function(){Suma(txtA.value,txtB.value,mostrar);});
 }
 
 /*simulando un constructor y un objeto
