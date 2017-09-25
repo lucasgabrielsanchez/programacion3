@@ -96,7 +96,6 @@ class Producto
 		}
 		fclose($archivo);
 		
-		
 		return $ListaDeProductosLeidos;
 		
 	}

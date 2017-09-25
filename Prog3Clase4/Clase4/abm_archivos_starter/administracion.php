@@ -65,7 +65,7 @@ switch($queHago){
 			}
 		}
 
-		header("Location:./index.php");
+		header("Location:./indexx.php");
 		
 		break;
 	
