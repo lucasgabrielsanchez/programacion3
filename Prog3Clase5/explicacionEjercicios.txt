@@ -1,0 +1,41 @@
+ClienteCarga.php
+1. Recibe por get los siguientes datos: Nombre, Mail, Clave y Sexo
+2. Crea el objeto de tipo cliente
+3. Guarda en el archivo Clientes/ClientesActuales.txt en un renglon distinto
+
+
+ValidarCliente.php 
+1.Recibe por post el correo y la clave, si coincide con alguno de los datos cargados, retorna  el mensaje "Cliente logueado"
+
+
+
+EJERCICIO 2
+Producto.php
+Posee dos atributos privados, implementa la interfaz ivendible, con el metodo PrecioMasIva. Y tiene un metodo que se llama RetornarArrayDeProductos
+que retorna un array con 5 Productos.
+
+VenderProducto.php
+Recibe por GET el nombre del producto y la cantidad, Hace llamadas a metodos y retorna el precio total a pagar.
+
+
+EJERCICIO 3
+Archivo Alta producto.php
+Recibe por post el nombre el precio y tambien una foto del producto
+Guardar la foto con el nombre y el producto
+
+GrillaProductos.php
+Retorna una tabla de productos con la imagen correspondiente de cada producto
+
+La foto se guarda con el nombre, y con el mismo nombre del producto se encuentra la foto
+
+EJERCICIO 4
+Borrar productos.php
+Si recibe un nombre por get, retorna si el producto està en la lista. Si lo recibe por post, con el parametro: 
+"queDeboHacer" = "Borrar", 
+se debe borrar al producto y mover la foto al subdirectorio productos borrados con el nombre formado por el producto+fecha de borrado
+
+Modificar Productos.php
+Recibe nombre mail clave y sexo de un cliente, busca por mail y si existen los datos se guardan los nuevos datos ingresados y 
+la foto se guarda con el nuevo nombre (a la foto ya guardada se le modifica el nombre).
+
+
