@@ -1,0 +1,10 @@
+instalar Node, abrir los archivos que nos pasaron con shift + click derecho, abrir ventana de comandos aqui
+y seguir los pasos para abrirlos.
+
+hacer el mismo ejercicio de nombre y apellido que agrega a la lista de la clase pasada, y a la ruta agregarPersona del
+node, pegarle para que agregue lo que le pasamos. Con Post le pasamos a agregarPersonas del node y llamamos con get
+a Personas del node y refrescamos la carga en la lista.
+
+var persona = {}.
+
+persona.nombre y le paso lo del txt y con el apellido lo mismo.
