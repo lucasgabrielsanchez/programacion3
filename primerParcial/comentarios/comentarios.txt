@@ -1,0 +1,3 @@
+lucas@hotmail - titulo - comentario - imagenesDeComentario/titulo.jpg
+lucas@hotmail - titulo2 - comentario2 - imagenesDeComentario/titulo2.jpg
+pedro@hotmail - titulonuevo - comentarionuevo - imagenesDeComentario/titulonuevo.jpg
