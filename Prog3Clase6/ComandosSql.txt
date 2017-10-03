@@ -1,0 +1,50 @@
+INSERT INTO personas (`nombre`, `clave`) VALUES ('Natalia','Natalia') , ('Jorge','Jorge') , ('Leo','Leo'); separando por coma los pares 
+de valores, le paso al insert varios elementos para que de una sola vez los guarde.
+DELETE FROM personas WHERE id = 1; borra por id, si el id no existe no pasa nada.
+DELETE FROM personas; borra todo.
+DELETE FROM `personas` WHERE nombre = 'natalia'. borra las filas cuyo 'nombre' sea 'natalia'.
+*Un campo AI (autoincremental) no se puede editar, por ejemplo no se le puede hacer un Update Set.
+UPDATE `personas` SET `nombre`='alguno' esto provoca que le cambie el nombre a todas las filas, porque no elegí un WHERE.
+UPDATE `personas` SET `nombre`='otro' WHERE clave='natalia' esto le pone el nombre "otro" a todas las filas cuya clave sea "natalia".
+SELECT * FROM `personas` trae la tabla personas completa.
+SELECT `id` FROM `personas` trae solo la columna id.
+SELECT `clave` as 'apellido' FROM `personas`. luego del as viene el alias que es como nos va a mostrar lo que le pedimos, con que nombre lo muestra.
+INSERT INTO `localidad`(`descripcion`) VALUES ('Quilmes'),('Lanus'),('Avellaneda').
+Establecer relacion entre personas y Localidad.
+SELECT * From Persona.
+UPDATE `personas` SET `idLocalidad`=1 WHERE `id`=2.
+
+UPDATE `personas` SET `idLocalidad`=2 WHERE `id`=4 or `id`=8; //le pone 2 a la idLocalidad de la tabla personas
+si el id es 4 O el id es 8. También se puede usar AND para pedir que se cumplan 2 condiciones osea algo Y algo.
+UPDATE `personas` SET `idLocalidad`=3 WHERE `id`=9 OR `id`=10 OR `id`=11;
+
+//producto cartesiano de ambas tablas, le doy el alias P a la tabla personas y L a la tabla localidad
+SELECT P.nombre, L.descripcion
+FROM Personas as P, Localidad as L
+
+//matchear y traer las 2 tablas con su relacion de ids de las localidades
+SELECT P.nombre, L.descripcion
+FROM  Personas as P, Localidad as L
+WHERE P.idLocalidad = L.id
+
+
+claves compuestas en el tp significa que un par de claves ya no puede ser utilizada nuevamente.
+
+Materia                                 Alumno
+______________                          ___________ 
+|Cod         |muchos ----------- muchos | ID       |
+|Descripcion |                          | Legajo   |
+--------------                          -----------
+    uno                                  uno
+     |                                    |
+     |__________                __________|
+                muchos    muchos
+                _______________
+                |Materia-Alumno|      
+                |Cod-Materia   |
+                |Id-Alumno     |
+                |Año           |
+                |Cuatrimestre  |
+                 --------------
+
+*Practicar PDO, en el github de Octavio hay una carpeta llamada "ejemplo PDO" para poder verlo.
