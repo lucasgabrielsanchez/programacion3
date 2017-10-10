@@ -1,0 +1,10 @@
+﻿alta - baja - listarJson - listarTabla
+consultas imperativas/declarativas
+-crear php que reciba por post y get e interactue con la base de datos
+un archivo para alta, otro para baja, otro para listar, etc.
+Archivo accesoADatos para conectarnos a la BD. (genérico).
+
+hacer lo mismo que CD pero con Persona
+
+para usar la base de datos de cd, crear una tabla llamada "cdcol" en phpMyAdmin y dentro tirarle el cdcol.sql
+
