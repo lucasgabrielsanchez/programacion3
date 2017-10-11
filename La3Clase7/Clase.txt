@@ -1,0 +1,46 @@
+Administrador de paquetes llamado Bower.
+JQuery permite reducir codigo comparado a Javascript nativo, por ejemplo para simplificar
+las instrucciones Ajax.
+Una manera de bajar Jquery es ir a https://jquery.com/download/ bajar la versión que deseamos, ponerlo en nuestra
+carpeta donde esté nuestro html y hacer referencia al archivo descargado con src="...".
+Otra forma es ir a https://code.jquery.com/, elegir la versión deseada y copiar el código para pegarlo en nuestro 
+html y que use el jQuery desde el servidor.
+Otra manera es usar un Administrador de Paquetes, por ejemplo Bower (adm. de paquetes para FrontEnd), para usar Bower
+necesitamos tener instalado Node. En Visual Code apretamos ctrl+ñ para abrir la terminal, tecleamos npm install -g bower,
+el -g permite instalarlo de manera global para todos los proyectos de Visual Code.
+Para ver si está intstalado teclamos bower -v. Bower init lo inicia. Se puede descargar la consola de Git para Visual Code.
+Para bajarlo vamos a Git, https://git-scm.com/, Downloads for Windows e intstalamos, durante el proceso de instalación
+debemos elegir la opción para que pueda ejecutarse desde una consola de comandos.
+bower search jquery busca en gitHub los repositorios que necesitamos de jQuery.
+Se puede instalar Bootstrap, Jquery, etc con bower.
+bower install -save, permite también guardar en un Json la versión de lo que instalamos. Sirve para luego instalar
+con bower install, las mismas librerías en otro proyecto, porque recorre ese Json.
+bower unistall para desinstalar.
+bower search bootstrap para buscar versiones de bootstrap.
+bower install -save bootstrap.
+(bootstrap necesita de jQuery, jQuery es una dependencia de bootstrap). Si descargo bootstrap y no tengo jQuery, jQuery se
+va a instalar solo porque bootstrap lo necesita.
+manera mas cómoda, creo un archivo con extensión .bowerrc, adentro hago un Json con "Directory": "scripts(acá la carpeta que deseo)".
+ahora cuando hago un install, ejemplo bower install -save jQuery, va a descargar en esta carpeta "scripts", los archivos
+respectivos del framework que instalamos.
+Entonces de esta manera puedo crear un src=".." normal en el html que apunte directamente al framework o script.
+Le tenemos que pegar al archivo dentro de la carpeta "dist".
+
+algunas funciones para Ajax de jQuery:
+$.Ajax();
+$.get();
+$.post();
+$.getJson();
+
+$.Ajax({beforeSend:(aquí podría poner el spinner por ejemplo)});
+$.Ajax({sucess(esto sucede cuando la consulta llega al estado 4 como vimos en el abm)});
+$.Ajax({error: function(xhr,status,error)}); xhr es la referencia a la consulta, status el estado, y error el código de error.
+$.Ajax({complete(se ejecuta siempre, es como el "finally" del try cath)});
+$.Ajax({url()});
+$.Ajax({type()});
+$.Ajax({data()});
+$.Ajax({timeout()});
+$.Ajax({datatype()}); (puedo especificarle el tipo de dato que voy a recibir, por ejemplo si recibo un JSon, le pongo
+JSon como datatype y me hace automáticamente el JSon.parse para devolverme el objeto).
+var tabla = $("#formulario").serialize() devuele en un objeto, un formulario del html, se puede recorrer como el DOM.
+

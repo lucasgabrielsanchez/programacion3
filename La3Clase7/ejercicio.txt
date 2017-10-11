@@ -1,0 +1,1 @@
+Tratar de hacer el mismo ABM que le pega al node, con Ajax pero de JQuery.
