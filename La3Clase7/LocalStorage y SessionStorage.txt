@@ -1,0 +1,8 @@
+Apartir de html5 aparecieron 2 elementos, localStorage y sessionStorage
+El sessionStorage almacena solo durante la vida de utilización de la página.
+El localStorage almacena de forma permanente.
+
+El localStorage almacena por dominio y puerto cada información.
+se le puede poner una fecha de vencimiento para que se borre.
+
+al tocar F12 dentro de la solapa Aplication puedo ver el contenido de localStorage y sessionStorage.

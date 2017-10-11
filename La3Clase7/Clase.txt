@@ -44,3 +44,6 @@ $.Ajax({datatype()}); (puedo especificarle el tipo de dato que voy a recibir, po
 JSon como datatype y me hace automáticamente el JSon.parse para devolverme el objeto).
 var tabla = $("#formulario").serialize() devuele en un objeto, un formulario del html, se puede recorrer como el DOM.
 
+
+con Jquery tengo la posibilidad de agregarle animaciones a los elementos del html, por ejemplo que se mueva un botón,
+que aparezca o desaparezca lentamente una imagen, etc.
