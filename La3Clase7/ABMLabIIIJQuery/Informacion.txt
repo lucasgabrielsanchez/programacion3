@@ -1,0 +1,5 @@
+Hacer ejercicio para guardar, borrar y modificar personas en un html con un seridor Node.js.
+con GetAtribute podemos obtener un atributo de un objeto html.
+con SetAtribute podemos setear un atributo de un objeto html, como por ejemplo un manejador.
+Para abrir el servidor node usamos node server, en el cmd que se nos abbre al hacer shift + "abrir ventana
+de comandos aquí" en la carpeta del servidor.
