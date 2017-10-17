@@ -1,0 +1,74 @@
+Info útil: si toco la comilla ` en la redacción de comandos dentro de MySql web, me aparecen los nombres y tipos de los campos de las tablas
+contenidas en mi BD.
+
+//Creo la base de datos.
+CREATE DATABASE UTN;
+
+//Digo que voy a usar esta base de datos.
+USE utn;
+
+//Sirve para listar las bases de datos existentes.
+SHOW databases;
+
+--Proveedores--
+
+//Creo la tabla Proveedores con sus "columnas" (Es obligatorio al menos definir una columna al crear una tabla, sino no permite crearla).
+CREATE TABLE Proveedores ( Numero INT PRIMARY KEY NOT NULL, Nombre VARCHAR(30), Domicilio VARCHAR(50), Localidad VARCHAR(80) );
+
+//Como me olvidé de hacer auto incremental a la columna Numero de mi tabla Proveedores, se lo agrego mediante el comando ALTER TABLE
+//que me permite modificar, entre otras cosas, elementos de una tabla. Sintax: ALTER TABLE proveedores CHANGE columna_vieja columna_nueva INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE proveedores CHANGE Numero Numero INT NOT NULL AUTO_INCREMENT;
+
+
+//Cambiar el nombre de una columnad de ser necesario. Es necesario especificar el tipo ademas del nombre nuevo, porque da error si solo
+//colocamos el nombre nuevo.
+ALTER TABLE tabla CHANGE nombre_viejo nombre_nuevo varchar(30);
+
+
+//Cambiando el valor inicial con el que comienza la columna AUTO_INCREMENT de mi tabla, que es la de Numero.
+ALTER TABLE proveedores AUTO_INCREMENT=100;
+
+//Cargando de valores mi tabla Proveedores.
+INSERT INTO proveedores (nombre,domicilio,localidad) VALUES ('Perez','Perón 876','Quilmes'),
+('Gimenez','Mitre 750','Avellaneda'), ('Aguirre','Boedo 634','Bernal');
+
+--Productos--
+
+//Creo la tabla Productos con sus columnas.
+CREATE TABLE Productos ( pNumero int NOT NULL PRIMARY KEY, pNombre varchar(30), Precio float, Tamaño varchar(20) );
+
+//Como me olvidé de hacer auto incremental a la columna pNumero de mi tabla Productos, se lo agrego mediante el comando ALTER TABLE
+//que me permite modificar, entre otras cosas, elementos de una tabla. Sintax: ALTER TABLE proveedores CHANGE columna_vieja columna_nueva INT NOT NULL AUTO_INCREMENT;
+ALTER TABLE productos CHANGE pNumero pNumero INT NOT NULL AUTO_INCREMENT;
+
+//Cargando de valores mi tabla Productos.
+INSERT INTO productos (pNombre,Precio,Tamaño) VALUES ('Caramelos','1.5','Chico'),
+('Cigarrillos','45.89','Mediano'),('Gaseosa','15.80','Grande');
+
+
+--Envios--
+
+//Creo la tabla Envios con sus columnas.
+CREATE TABLE envios( Numero int NOT NULL PRIMARY KEY, pNumero int NOT NULL, Cantidad int NOT NULL );
+
+//Como hay un error en el enunciado y Numero no tiene que ser PRIMARY KEY, modifico dicha columna para que ya no sea PK. con este
+//comando provoco eso, no es necesario indicar que columna posee la PK ya que solo se admite una PK por tabla.
+ALTER TABLE envios DROP PRIMARY KEY;
+
+//Cargando de valores mi tabla Productos.
+INSERT INTO envios (Numero,pNumero,Cantidad) VALUES ('100','1','500'),('100','2','1500'),('100','3','100'),
+('101','2','55'),('101','3','225'),('102','1','600'),('102','3','300');
+
+1- SELECT * FROM productos ORDER BY pNombre ASC; (info: con ASC lo ordeno de forma ascendente, con DESC, de forma descendente).
+2- SELECT * from proveedores WHERE Localidad='Quilmes';
+3- SELECT * FROM envios WHERE Cantidad>='200' AND Cantidad<='300';
+4- SELECT SUM(e.Cantidad) FROM envios AS e; (sin alias: SELECT SUM(Cantidad) FROM envios;);
+5- SELECT p.pNumero FROM productos as p, envios as e WHERE p.pNumero=e.pNumero LIMIT 3; (Muestra pNumero de productos, usando el 
+alias p que representa a la tabla productos, el alias e que representa a envios, y con estos alias comparo los pNumero de ambas tablas
+ya que sino no podría por tener mismos nombres de columnas, y con LIMIT digo la cantidad máxima de filas que me va a traer).
+6- SELECT prov.Nombre, prod.pNombre FROM proveedores as prov, productos as prod, envios as env WHERE prov.Numero = env.Numero AND prod.pNumero = env.pNumero;
+7-SELECT prod.pNombre, env.Cantidad, prod.Precio, ROUND(env.Cantidad*prod.Precio) FROM envios as env, productos as prod WHERE env.pNumero = prod.pNumero;
+(Acá le digo que me muestra una tabla con el nombre del producto, la cantidad, el precio y el monto (cantidad * precio) de los envíos. La 
+función ROUND() se usa para redondear números float, double, etc).
+8- SELECT env.Cantidad FROM envios as env WHERE env.Numero = "102" AND env.pNumero = 1;
+9- 
