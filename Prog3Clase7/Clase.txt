@@ -1,10 +1,19 @@
 ﻿alta - baja - listarJson - listarTabla
 consultas imperativas/declarativas
 -crear php que reciba por post y get e interactue con la base de datos
-un archivo para alta, otro para baja, otro para listar, etc.
+un archivo php para alta, otro para baja, otro para listar, etc.
 Archivo accesoADatos para conectarnos a la BD. (genérico).
 
 hacer lo mismo que CD pero con Persona
 
-para usar la base de datos de cd, crear una tabla llamada "cdcol" en phpMyAdmin y dentro tirarle el cdcol.sql
+para usar la base de datos de cd, crear una bd llamada "cdcol" en phpMyAdmin y dentro tirarle el cdcol.sql
+
+
+(en fetch())
+
+*Por default si al fetch no le pasamos un fetch_style, de forma predeterminada toma PDO::ATTR_DEFAULT_FETCH_MODE (el cual por defecto es PDO::FETCH_BOTH).
+y PDO::FETCH_BOTH es el conjunto de ( PDO::FETCH_ASSOC y PDO::FETCH_NUM ).
+
+//El PDO::FETCH_ASSOC devuelve SOLAMENTE un array indexado por el título de cada columna.
+//El PDO::FETCH_NUM devuelve SOLAMENTE un array indexado por el índice númerico autogenerado de cada columna.
 
