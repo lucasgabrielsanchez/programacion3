@@ -1,0 +1,21 @@
+Es un framework para agregar estilos.
+
+Es un conjunto de clases, que nos falicitan estilos predefinidos.
+
+Se instala como JQuery, puede instalarse con Bower por ejemplo.
+
+.container + tab nos crea un div con la clase container útil para bootstrap.
+.row + tab crea un div con clase row.
+container fluid nos abarca toda la pantalla.
+
+con alt mas flechita sobre código sombreado en Visual Studio, muevo de lugar dicho código.
+lorem + tab me crea un texto en latin.
+alt + click en las partes donde quiero ingresar código a la vez, sirve para escribir lo mismo en varios lugares.
+shift + alt + F nos ordena el código.
+.# + tab me crea un div con las clase e id a completar.
+
+clearfix visible-sm-block va en el lugar en donde se me desacomodan los divs.
+
+Con bootstrap puedo crear un sitio responsive (El sitio se ajusta según el dispositivo).
+tamaños de páginas(col = xs jm md lg).
+bootstrap trabaja con grillas, que es una tabla con 12 columnas.
