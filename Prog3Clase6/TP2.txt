@@ -1,0 +1,42 @@
+CREATE TABLE Proveedores (Numero INT NOT NULL, NOMBRE varchar(30) NULL, Domicilio varchar(50) NULL, Localidad varchar(80) NULL);
+
+CREATE TABLE Productos (pNumero INT PRIMARY KEY NOT NULL, pNombre varchar(30), Precio FLOAT, Tamaño varchar(20));
+
+CREATE TABLE Envios (Numero INT NOT NULL, pNumero INT NOT NULL, Cantidad INT NOT NULL);
+
+INSERT INTO Proveedores VALUES (100, 'Perez', 'Perón 876', 'Quilmes') , (101, 'Gimenez', 'Mitre 750', 'Avellaneda') , (102, 'Aguirre', 'Boedo 634', 'Bernal');
+
+INSERT INTO Productos VALUES (1, 'Caramelos', '1.5', 'Chico') , (2, 'Cigarrillos', '45.89', 'Mediano') , (3, 'Gaseosa', '15.80', 'Grande');
+
+INSERT INTO Envios VALUES (100, 1, 500) , (100, 2, 1500) , (100, 3, 100) , (101, 2, 55) , (101, 3, 225) , (102, 1, 600) , (102, 3, 300);
+
+1-SELECT * FROM Productos ORDER BY pNombre;
+
+2-SELECT * FROM Proveedores as prov, Productos as prod, Envios as env WHERE prov.Localidad = 'Quilmes' AND env.Numero = prov.Numero AND prod.pNumero = env.pNumero;
+
+3-SELECT * FROM Envios WHERE Cantidad >= 200 AND Cantidad <= 300;
+
+//El alias es opcional, lo puse para que aparezca de título al devolver la consulta.
+4-SELECT Sum(Cantidad) as CantidadSumada FROM Envios;
+
+5-SELECT Numero FROM Envios LIMIT 3;
+
+6-SELECT prod.pNombre, prov.Nombre FROM Proveedores as prov, Productos as prod, Envios as env WHERE prov.Numero = env.Numero AND prod.pNumero = env.pNumero;
+
+7-SELECT (env.Cantidad * prod.Precio) as Monto FROM Proveedores as prov, Productos as prod, Envios as env WHERE env.Numero = prov.Numero AND prod.pNumero = env.pNumero;
+
+8-SELECT Cantidad FROM Envios WHERE Numero = 102 AND pNumero = 1;
+
+9-SELECT env.pNumero FROM Proveedores as prov, Productos as prod, Envios as env WHERE env.Numero = prov.Numero AND prod.pNumero = env.pNumero AND prov.Localidad = 'Avellaneda';
+
+10-Obtener los domicilios y localidades de los proveedores cuyos nombres contengan la letra ‘I’.
+
+11-INSERT INTO Productos VALUES (4, 'Chocolate', 25.35, 'chico');
+
+12-INSERT INTO Proveedores (Numero) VALUES (103);
+
+13-INSERT INTO Proveedores (Numero, Nombre, Localidad) VALUES (107, 'Rosales','La Plata');
+
+14-UPDATE Productos SET Precio = 97.50 WHERE Tamaño = 'Grande';
+
+15-
